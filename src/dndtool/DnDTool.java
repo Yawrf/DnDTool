@@ -17,15 +17,21 @@ import javafx.stage.Stage;
  */
 public class DnDTool extends Application {
     
+    private static Scene scene = null;
+    
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
-        Scene scene = new Scene(root);
+        scene = new Scene(root);
         
         stage.setScene(scene);
         stage.setTitle("D&D Tools");
         stage.show();
+    }
+    
+    public static Scene getScene() {
+        return scene;
     }
 
     /**
